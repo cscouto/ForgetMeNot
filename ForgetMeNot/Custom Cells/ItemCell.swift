@@ -33,6 +33,7 @@ class ItemCell: UITableViewCell {
       if let item = item {
         imgIcon.image = Icons(rawValue: item.icon)?.image()
         lblName.text = item.name
+        lblLocation.text = item.locationString()
         
       } else {
         imgIcon.image = nil
@@ -43,5 +44,6 @@ class ItemCell: UITableViewCell {
   }
   
   func refreshLocation() {
+    lblLocation.text = item?.locationString() ?? ""
   }
 }
